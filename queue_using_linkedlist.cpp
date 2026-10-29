@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Node structure for the linked list
 class node
 {
 public:
@@ -14,6 +15,7 @@ public:
     }
 };
 
+// Dynamic Queue implementation using a singly linked list
 class queue
 {
 private:
@@ -25,7 +27,7 @@ public:
     {
         front = rear = NULL;
     }
-
+// Returns 1 if queue is empty, 0 otherwise
     int empty(void)
     {
         if (front == NULL)
@@ -38,6 +40,7 @@ public:
         }
     }
 
+// Returns the front element without removing it
     int peek(void)
     {
         if (empty())
@@ -49,6 +52,7 @@ public:
         return front->data;
     }
 
+// Inserts a new node at the rear
     void enqueue(int x)
     {
         node *p = new node(x);
@@ -65,6 +69,7 @@ public:
         }
     }
 
+// Removes and returns the front node's data
     int dequeue(void)
     {
         if (empty())
@@ -77,7 +82,7 @@ public:
         node *p = front;
 
         front = front->next;
-
+// If queue becomes empty, reset rear pointer
         if (front == NULL)
         {
             rear = NULL;
@@ -87,7 +92,7 @@ public:
 
         return x;
     }
-
+// Traverses and prints all queue elements
     void display(void)
     {
         node *q = front;
