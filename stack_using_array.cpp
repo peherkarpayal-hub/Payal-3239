@@ -3,6 +3,7 @@ using namespace std;
 
 const int MAX = 5;
 
+// Stack implementation using a fixed-size array
 class Stack
 {
 private:
@@ -15,12 +16,14 @@ public:
         top = -1;
     }
 
+// Inserts an element onto the top of the stack
     void push(int x)
     {
         top++;
         a[top] = x;
     }
 
+// Removes and returns the top element
     int pop(void)
     {
         int x = a[top];
@@ -28,11 +31,13 @@ public:
         return x;
     }
 
+// Returns the top element without removing it
     int peek(void)
     {
         return a[top];
     }
 
+// Returns 1 if stack is full, 0 otherwise
     int full(void)
     {
         if (top == MAX - 1)
@@ -45,6 +50,7 @@ public:
         }
     }
 
+// Returns 1 if stack is empty, 0 otherwis
     int empty(void)
     {
         if (top == -1)
@@ -57,6 +63,7 @@ public:
         }
     }
 
+// Prints stack elements from top to bottom (LIFO order)
     void display(void)
     {
         for (int i = top; i >= 0; i--)
