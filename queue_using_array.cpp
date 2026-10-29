@@ -1,8 +1,12 @@
 #include <iostream>
 using namespace std;
 
+// Maximum capacity of the array-based queue
 const int MAX = 5;
 
+/**
+ * @brief Linear Queue implementation using a fixed-size array.
+ */
 class queue
 {
 private:
@@ -10,6 +14,7 @@ private:
     int front;
     int rear;
 
+// Constructor: Initializes an empty queue by setting front and rear to -1
 public:
     queue()
     {
@@ -17,6 +22,7 @@ public:
         rear = -1;
     }
 
+// Checks if the queue is empty (returns 1 if empty, 0 otherwise)
     int empty(void)
     {
         if (front == -1 && rear == -1)
@@ -29,6 +35,7 @@ public:
         }
     }
 
+// Checks if the queue has reached maximum capacity (returns 1 if full, 0 otherwise)
     int full(void)
     {
         if (rear == MAX - 1)
@@ -41,6 +48,7 @@ public:
         }
     }
 
+// Inserts a new element at the rear of the queue
     void enqueue(int x)
     {
         if (full())
@@ -62,6 +70,7 @@ public:
         a[rear] = x;
     }
 
+// Removes and returns the element from the front of the queue
     int dequeue(void)
     {
         if (empty())
@@ -85,6 +94,7 @@ public:
         return x;
     }
 
+// Returns the front element without removing it
     int peek(void)
     {
         if (empty())
@@ -96,6 +106,7 @@ public:
         return a[front];
     }
 
+// Prints all active elements in the queue from front to rear
     void display(void)
     {
         if (empty())
