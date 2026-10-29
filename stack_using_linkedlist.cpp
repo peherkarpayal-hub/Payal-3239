@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Node structure for the linked list
 class node {
 public:
     int data;
@@ -12,6 +13,7 @@ public:
     }
 };
 
+// Dynamic Stack implementation using a singly linked list
 class stack {
 private:
     node *top;
@@ -20,7 +22,7 @@ public:
     stack() {
         top = NULL;
     }
-
+// Returns 1 if stack is empty, 0 otherwise
     int empty() {
         if (top == NULL) {
             return 1;
@@ -29,12 +31,14 @@ public:
         }
     }
 
+// Inserts a new node at the top of the stack
     void push(int x) {
         node *p = new node(x);
         p->next = top;
         top = p;
     }
 
+// Removes the top node and returns its data
     int pop(void) {
         int x = top->data;
         node *p = top;
@@ -43,10 +47,12 @@ public:
         return x;
     }
 
+// Returns the top element without removing it
     int peek() {
         return top->data;
     }
 
+// Traverses and prints stack elements from top to bottom (LIFO order)
     void display() {
         node *q = top;
         while (q != NULL) {
